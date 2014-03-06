@@ -119,6 +119,12 @@
   <ItemGroup>
     <Content Include="FunctionalTests\Config.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XafWithAspNetCustomIdentity.Model\XafWithAspNetCustomIdentity.Model.csproj">
+      <Project>{38248979-711B-4BF9-ADD5-7DB288B8C214}</Project>
+      <Name>XafWithAspNetCustomIdentity.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
