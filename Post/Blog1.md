@@ -205,3 +205,87 @@ And User Login:
 	    }
 	
 	}
+
+
+Write a class that the XAF Module can use to register the exported types:
+
+> Note you can skip this, if you work with the designer, but it will come handy later
+	
+	using System;
+	using System.Collections.Generic;
+	
+	namespace XafWithAspNetCustomIdentity.Model._Configuration
+	{
+	    public static class ExportedTypesProvider
+	    {
+	        public static IEnumerable<Type> ExportedTypes
+	        {
+	            get
+	            {
+	                return new[]
+	                {
+	                    typeof(AspClaim),
+	                    typeof(AspRole),
+	                    typeof(AspUser),
+	                    typeof(AspUserLogin),
+	                };
+	            }
+	        }
+	    }
+	}
+
+In the `Module.cs` of the `XafWithAspNetCustomIdentity.Module` overwrite the `GetDeclaredExportedTypes` method:
+
+	using System;
+	using System.Linq;
+	using DevExpress.ExpressApp;
+	using System.Collections.Generic;
+	using DevExpress.ExpressApp.Updating;
+	using XafWithAspNetCustomIdentity.Model._Configuration;
+	
+	namespace XafWithAspNetCustomIdentity.Module
+	{
+	    // For more typical usage scenarios, be sure to check out http://documentation.devexpress.com/#Xaf/clsDevExpressExpressAppModuleBasetopic.
+	    public sealed partial class XafWithAspNetCustomIdentityModule : ModuleBase
+	    {
+	        public XafWithAspNetCustomIdentityModule()
+	        {
+	            InitializeComponent();
+	        }
+	
+	        protected override IEnumerable<Type> GetDeclaredExportedTypes()
+	        {
+	            return base.GetDeclaredExportedTypes().Concat(ExportedTypesProvider.ExportedTypes);
+	        }
+	
+	        public override IEnumerable<ModuleUpdater> GetModuleUpdaters(IObjectSpace objectSpace, Version versionFromDB)
+	        {
+	            ModuleUpdater updater = new DatabaseUpdate.Updater(objectSpace, versionFromDB);
+	            return new ModuleUpdater[] { updater };
+	        }
+	        public override void Setup(XafApplication application)
+	        {
+	            base.Setup(application);
+	            // Manage various aspects of the application UI and behavior at the module level.
+	        }
+	    }
+	}
+
+Lets run the application and see what happens:
+
+![](http://i.imgur.com/9RBlOFD.png)
+
+Perfect, we have now our model completed.
+Lets go on with the ASP.NET part.
+
+## ASP.NET ##
+
+Let's add another project:
+![](http://i.imgur.com/F6QWFR6.png)
+
+> Note: This sample uses `.NET4.5` but i think this is also possible with earlier versions of `.NET` but maybe not that easy ;)
+
+
+We create a default **MVC** with **Individual Accounts** project. You can mix the technologies, but for now let everything like it is.
+
+![](http://i.imgur.com/aYQIQhG.png)  
