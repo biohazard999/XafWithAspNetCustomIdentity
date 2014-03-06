@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{346D8A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XafWithAspNetCustomIdentity.Model", "XafWithAspNetCustomIdentity.Model\XafWithAspNetCustomIdentity.Model.csproj", "{38248979-711B-4BF9-ADD5-7DB288B8C214}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Asp", "Asp", "{9B1EFA19-6310-4415-B450-A3677DC2E2DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XafWithAspNetCustomIdentity.Web", "XafWithAspNetCustomIdentity.Web\XafWithAspNetCustomIdentity.Web.csproj", "{7FCFC0A8-BC8F-4453-A775-DE8173317CA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +50,12 @@ Global
 		{38248979-711B-4BF9-ADD5-7DB288B8C214}.EasyTest|Any CPU.Build.0 = Release|Any CPU
 		{38248979-711B-4BF9-ADD5-7DB288B8C214}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38248979-711B-4BF9-ADD5-7DB288B8C214}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FCFC0A8-BC8F-4453-A775-DE8173317CA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FCFC0A8-BC8F-4453-A775-DE8173317CA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FCFC0A8-BC8F-4453-A775-DE8173317CA7}.EasyTest|Any CPU.ActiveCfg = Release|Any CPU
+		{7FCFC0A8-BC8F-4453-A775-DE8173317CA7}.EasyTest|Any CPU.Build.0 = Release|Any CPU
+		{7FCFC0A8-BC8F-4453-A775-DE8173317CA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FCFC0A8-BC8F-4453-A775-DE8173317CA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,5 +65,6 @@ Global
 		{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D} = {9C4F837A-1E1A-4D04-BE12-4FFF4FF6D332}
 		{7964F87D-BC5D-4C4E-8B2F-71E89739AA97} = {9C4F837A-1E1A-4D04-BE12-4FFF4FF6D332}
 		{38248979-711B-4BF9-ADD5-7DB288B8C214} = {346D8AA3-F558-42D6-AA6C-BE307DA3DDD4}
+		{7FCFC0A8-BC8F-4453-A775-DE8173317CA7} = {9B1EFA19-6310-4415-B450-A3677DC2E2DB}
 	EndGlobalSection
 EndGlobal
